@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "D/aa0UP9yiIQrIoyySqdPiWERNBmC9esRXXl7UgjgIk=",
+  "Source": "FIAP.CloudGames.Catalog.API",
+  "BasePath": "_content/FIAP.CloudGames.Catalog.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

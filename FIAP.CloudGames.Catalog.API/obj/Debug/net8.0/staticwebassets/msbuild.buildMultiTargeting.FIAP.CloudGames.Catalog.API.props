@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FIAP.CloudGames.Catalog.API.props" />
+</Project>

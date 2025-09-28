@@ -1,0 +1,15 @@
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\bin\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.deps.json
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\bin\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\bin\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.pdb
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.pdb
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.csproj.AssemblyReference.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.AssemblyInfoInputs.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.AssemblyInfo.cs
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.csproj.CoreCompileInputs.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.Clo.EFFE2A5D.Up2Date
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\refint\FIAP.CloudGames.WebAPI.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\FIAP.CloudGames.WebAPI.Core.pdb
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.WebAPI.Core\obj\Debug\net8.0\ref\FIAP.CloudGames.WebAPI.Core.dll

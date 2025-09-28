@@ -1,0 +1,25 @@
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.deps.json
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.pdb
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.csproj.AssemblyReference.cache
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.AssemblyInfoInputs.cache
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.AssemblyInfo.cs
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.csproj.CoreCompileInputs.cache
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.sourcelink.json
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\refint\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.pdb
+C:\Users\wesle\source\repos\FIAP.CloudGames\src\building blocks\FIAP.CloudGames.Core\obj\Debug\net8.0\ref\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.deps.json
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\bin\Debug\net8.0\FIAP.CloudGames.Core.pdb
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.csproj.AssemblyReference.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.AssemblyInfoInputs.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.AssemblyInfo.cs
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.csproj.CoreCompileInputs.cache
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\refint\FIAP.CloudGames.Core.dll
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\FIAP.CloudGames.Core.pdb
+C:\Users\wesle\source\repos\Fiap.CloudGames.Games\FIAP.CloudGames.Core\obj\Debug\net8.0\ref\FIAP.CloudGames.Core.dll
