@@ -1,5 +1,5 @@
 # Nome do seu pipeline
-name: Build and Deploy Users API to Azure
+name: Build and Deploy Games API to Azure
 
 # Gatilho: Este pipeline vai rodar toda vez que houver um push na branch 'main'
 on:
@@ -10,8 +10,8 @@ on:
 
 # Variáveis de ambiente para facilitar a manutenção
 env:
-  AZURE_WEBAPP_NAME: app-fiapcloudgames-users-api  # O nome do App Service que você acabou de criar
-  SOLUTION_FILE_PATH: Fiap.CloudGames.Users.sln      # O caminho para o seu arquivo .sln
+  AZURE_WEBAPP_NAME: app-fiapcloudgames-games-api  # O nome do App Service que você acabou de criar
+  SOLUTION_FILE_PATH: Fiap.CloudGames.Games.sln      # O caminho para o seu arquivo .sln
 
 jobs:
   build-and-deploy:
