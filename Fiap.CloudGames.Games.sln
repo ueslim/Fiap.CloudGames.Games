@@ -9,8 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.CloudGames.WebAPI.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.CloudGames.Core", "FIAP.CloudGames.Core\FIAP.CloudGames.Core.csproj", "{2677A265-6FCF-1A8E-4D7D-82148D08C400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.CloudGames.MessageBus", "FIAP.CloudGames.MessageBus\FIAP.CloudGames.MessageBus.csproj", "{BAB45854-E027-8780-D258-C0698F5C7B0B}"
-EndProject
+ 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +28,7 @@ Global
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAB45854-E027-8780-D258-C0698F5C7B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAB45854-E027-8780-D258-C0698F5C7B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAB45854-E027-8780-D258-C0698F5C7B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAB45854-E027-8780-D258-C0698F5C7B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+ 
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

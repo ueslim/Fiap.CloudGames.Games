@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FIAP.CloudGames.Core\FIAP.CloudGames.Core.csproj" />
-    <ProjectReference Include="..\FIAP.CloudGames.MessageBus\FIAP.CloudGames.MessageBus.csproj" />
     <ProjectReference Include="..\FIAP.CloudGames.WebAPI.Core\FIAP.CloudGames.WebAPI.Core.csproj" />
   </ItemGroup>
 
