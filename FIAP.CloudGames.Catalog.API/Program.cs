@@ -1,6 +1,7 @@
 using FIAP.CloudGames.Catalog.API.Configuration;
 using FIAP.CloudGames.Catalog.API.Data;
 using FIAP.CloudGames.WebAPI.Core.Identity;
+using Microsoft.EntityFrameworkCore;
 
 LoggingConfig.ConfigureBootstrapLogger();
 
@@ -31,6 +32,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<CatalogContext>();
+    await context.Database.MigrateAsync();
     await CatalogContextSeed.EnsureSeedProducts(context);
 }
 
