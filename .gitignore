@@ -54,6 +54,20 @@ bld/
 **/BundleArtifacts/
 **/ProjectTemplates/
 **/ItemTemplates/
+**/out/
+**/dist/
+
+# Common compiled binaries
+*.dll
+*.exe
+*.exe.config
+*.dll.config
+*.appx
+*.msix
+*.msi
+*.zip
+*.tar
+*.gz
 
 # Logs & Build logs
 *.log
@@ -94,6 +108,11 @@ packages/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+*.targets
+*.props
 
 ############################
 # Publishing artifacts
@@ -104,6 +123,7 @@ app.publish/
 *.pubxml.user
 *.publishproj
 *.azurePubxml
+*.Container.props
 
 ############################
 # Tests & Coverage
@@ -118,6 +138,7 @@ TestResults.xml
 coverage/
 coverage.cobertura.xml
 *.opencover.xml
+*.trx
 
 ############################
 # Local settings / environment
@@ -129,6 +150,10 @@ coverage.cobertura.xml
 
 # Local debug launch profiles (user/machine-specific)
 **/Properties/launchSettings.json
+
+# Local tooling caches
+**/.vs/
+**/.idea/
 
 # IIS Express
 .vs/iisexpress/
@@ -158,5 +183,16 @@ pnpm-debug.log*
 *.patch
 *.pdb
 *.mdb
+*.ilk
+*.obj
+*.idb
+*.cache
+*.tmp
+*.log
+
+# Rider / ReSharper caches
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
 
 

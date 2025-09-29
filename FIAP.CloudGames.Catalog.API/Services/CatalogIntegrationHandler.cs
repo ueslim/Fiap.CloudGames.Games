@@ -1,19 +1,17 @@
 ﻿using FIAP.CloudGames.Catalog.API.Models;
 using FIAP.CloudGames.Core.DomainObjects;
 using FIAP.CloudGames.Core.Messages.Integration;
-using FIAP.CloudGames.MessageBus;
 
 namespace FIAP.CloudGames.Catalog.API.Services
 {
+    // Message bus removed; disable background handler.
     public class CatalogIntegrationHandler : BackgroundService
     {
-        private readonly IMessageBus _bus;
         private readonly IServiceProvider _serviceProvider;
 
-        public CatalogIntegrationHandler(IServiceProvider serviceProvider, IMessageBus bus)
+        public CatalogIntegrationHandler(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            _bus = bus;
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -24,8 +22,7 @@ namespace FIAP.CloudGames.Catalog.API.Services
 
         private void SetSubscribers()
         {
-            _bus.SubscribeAsync<OrderAuthorizedIntegrationEvent>("OrderAuthorized", async request =>
-                await DeductStock(request));
+            // No-op: message bus removed
         }
 
         private async Task DeductStock(OrderAuthorizedIntegrationEvent message)
@@ -71,15 +68,13 @@ namespace FIAP.CloudGames.Catalog.API.Services
                     throw new DomainException($"Problemas ao atualizar estoque do pedido {message.OrderId}");
                 }
 
-                var orderDeducted = new OrderStockDeductedIntegrationEvent(message.CustomerId, message.OrderId);
-                await _bus.PublishAsync(orderDeducted);
+                // TODO: integrate via HTTP or other mechanism if needed
             }
         }
 
         public async void CancelOrderForInsufficientStock(OrderAuthorizedIntegrationEvent message)
         {
-            var orderCanceled = new OrderStockDeductedIntegrationEvent(message.CustomerId, message.OrderId);
-            await _bus.PublishAsync(orderCanceled);
+            // TODO: integrate via HTTP or other mechanism if needed
         }
     }
 }
