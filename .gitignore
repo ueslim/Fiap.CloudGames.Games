@@ -1,0 +1,162 @@
+# .gitignore for Visual Studio / .NET (updated for .NET 8)
+# Based on GitHub's official VisualStudio and dotnet templates
+
+############################
+# OS / General
+############################
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+Icon?
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+############################
+# IDEs & Editors
+############################
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains Rider / ReSharper
+.idea/
+*.sln.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+############################
+# Build & Output
+############################
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+[Xx]64/
+[Xx]86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+bld/
+**/AppPackages/
+**/BundleArtifacts/
+**/ProjectTemplates/
+**/ItemTemplates/
+
+# Logs & Build logs
+*.log
+*.tlog
+*.wrn
+*.err
+msbuild.log
+msbuild.err
+msbuild.wrn
+msbuild.binlog
+
+############################
+# Temporary / Cache files
+############################
+*.tmp
+*.temp
+*.cache
+*.db
+*.db-shm
+*.db-wal
+*.sdf
+*.pid
+*.seed
+*.svclog
+*.trace
+.cache/
+
+############################
+# .NET / NuGet
+############################
+packages/
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+############################
+# Publishing artifacts
+############################
+**/publish/
+app.publish/
+*.pubxml
+*.pubxml.user
+*.publishproj
+*.azurePubxml
+
+############################
+# Tests & Coverage
+############################
+[Tt]est[Rr]esult*/
+[Tt]est[Rr]esults/
+TestResult.xml
+TestResults.xml
+*.coverage
+*.coveragexml
+*.dotCover
+coverage/
+coverage.cobertura.xml
+*.opencover.xml
+
+############################
+# Local settings / environment
+############################
+# Keep example env files checked in
+.env
+.env.*
+!.env.example
+
+# Local debug launch profiles (user/machine-specific)
+**/Properties/launchSettings.json
+
+# IIS Express
+.vs/iisexpress/
+IISExpress/
+
+############################
+# Node / SPA (often present in ASP.NET templates)
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+# Tooling / Analysis
+############################
+.sonarqube/
+.scannerwork/
+
+############################
+# Misc
+############################
+*.orig
+*.rej
+*.diff
+*.patch
+*.pdb
+*.mdb
+
+
