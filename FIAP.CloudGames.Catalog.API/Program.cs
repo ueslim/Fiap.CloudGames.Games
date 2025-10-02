@@ -1,5 +1,6 @@
 using FIAP.CloudGames.Catalog.API.Configuration;
 using FIAP.CloudGames.Catalog.API.Data;
+using FIAP.CloudGames.Catalog.API.Data.Search;
 using FIAP.CloudGames.WebAPI.Core.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +9,7 @@ LoggingConfig.ConfigureBootstrapLogger();
 var builder = WebApplication.CreateBuilder(args);
 
 // Serilog + OTLP para logs
-builder.ConfigureSerilogWithOpenTelemetry("cart-api");
+builder.ConfigureSerilogWithOpenTelemetry("catalog-api");
 
 if (builder.Environment.IsDevelopment())
 {
@@ -20,7 +21,7 @@ builder.Services.AddJwtConfiguration(builder.Configuration);
 
 builder.Services.AddSwaggerConfiguration();
 
-builder.Services.RegisterServices();
+builder.Services.RegisterServices(builder.Configuration);
 
 // OpenTelemetry Tracing + Metrics
 builder.Services.AddObservabilityConfiguration(builder.Configuration);
@@ -32,8 +33,15 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<CatalogContext>();
-    await context.Database.MigrateAsync();
+
+    if ((await context.Database.GetPendingMigrationsAsync()).Any())
+        await context.Database.MigrateAsync();
+
     await CatalogContextSeed.EnsureSeedProducts(context);
+
+    // Indexar tudo no ES na subida (idempotente)
+    var search = scope.ServiceProvider.GetRequiredService<IProductSearchService>();
+    await search.BulkIndexAllFromDatabase(context);
 }
 
 app.UseSwaggerConfiguration();

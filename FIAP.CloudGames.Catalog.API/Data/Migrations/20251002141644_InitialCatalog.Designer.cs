@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FIAP.CloudGames.Catalog.API.Data.Migrations
 {
     [DbContext(typeof(CatalogContext))]
-    [Migration("20250925230702_Init_Catalog")]
-    partial class Init_Catalog
+    [Migration("20251002141644_InitialCatalog")]
+    partial class InitialCatalog
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,19 +42,49 @@ namespace FIAP.CloudGames.Catalog.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(500)");
 
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("varchar(250)");
+
+                    b.Property<decimal?>("Metacritic")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(250)");
 
+                    b.Property<string>("Platform")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<long>("PopularityScore")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("Sales")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<double?>("UserRating")
+                        .HasColumnType("float");
+
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("Views")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 

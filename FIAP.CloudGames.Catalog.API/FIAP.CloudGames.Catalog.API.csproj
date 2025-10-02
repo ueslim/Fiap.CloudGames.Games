@@ -18,11 +18,26 @@
     <PackageReference Include="NetDevPack.Security.JwtExtensions" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	<PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.15.5" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9">
+	 <PrivateAssets>all</PrivateAssets>
+	 <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FIAP.CloudGames.Core\FIAP.CloudGames.Core.csproj" />
     <ProjectReference Include="..\FIAP.CloudGames.WebAPI.Core\FIAP.CloudGames.WebAPI.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Seed\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="Data\Seed\products.seed.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 </Project>
