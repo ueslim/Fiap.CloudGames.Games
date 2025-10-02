@@ -11,6 +11,9 @@ namespace FIAP.CloudGames.Catalog.API.Models
         public DateTime DateRegister { get; set; }
         public string Image { get; set; }
         public int StockQuantity { get; set; }
+        public string Genre { get; set; }
+        public int Popularity { get; set; }
+        public string Platform { get; set; }
 
         public void DecrementStock(int quantity)
         {

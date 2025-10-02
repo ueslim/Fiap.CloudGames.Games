@@ -1,7 +1,9 @@
 using FIAP.CloudGames.Catalog.API.Configuration;
 using FIAP.CloudGames.Catalog.API.Data;
+using FIAP.CloudGames.Catalog.API.Services;
 using FIAP.CloudGames.WebAPI.Core.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 LoggingConfig.ConfigureBootstrapLogger();
 
@@ -24,6 +26,16 @@ builder.Services.RegisterServices();
 
 // OpenTelemetry Tracing + Metrics
 builder.Services.AddObservabilityConfiguration(builder.Configuration);
+
+#region Elastic 
+builder.Services.Configure<ElasticSettings>(builder.Configuration.GetSection("ElasticSettings"));
+builder.Services.AddSingleton<IElasticSettings>(sp => sp.GetRequiredService<IOptions<ElasticSettings>>().Value);
+builder.Services.AddSingleton(typeof(IElasticClient<>), typeof(ElasticClient<>));
+builder.Services.AddScoped(typeof(IElasticSearchService<>), typeof(ElasticSearchService<>));
+
+//Cloud
+//builder.Services.Configure<ElasticSettings>(builder.Configuration.GetSection(nameof(ElasticSettings)));
+#endregion
 
 var app = builder.Build();
 
