@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.CloudGames.Core", "FIA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.CloudGames.Catalog.Tests", "FIAP.CloudGames.Catalog.Tests\FIAP.CloudGames.Catalog.Tests.csproj", "{BF97FC75-C339-43F5-A89C-9FAE1A291B1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2677A265-6FCF-1A8E-4D7D-82148D08C400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF97FC75-C339-43F5-A89C-9FAE1A291B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF97FC75-C339-43F5-A89C-9FAE1A291B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF97FC75-C339-43F5-A89C-9FAE1A291B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF97FC75-C339-43F5-A89C-9FAE1A291B1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

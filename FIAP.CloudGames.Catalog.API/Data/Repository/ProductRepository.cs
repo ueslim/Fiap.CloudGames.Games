@@ -27,15 +27,22 @@ namespace FIAP.CloudGames.Catalog.API.Data.Repository
 
         public async Task<List<Product>> GetProductsById(string ids)
         {
-            var idsGuid = ids.Split(',')
-                .Select(id => (Ok: Guid.TryParse(id, out var x), Value: x));
+            if (string.IsNullOrWhiteSpace(ids))
+                return new List<Product>();
 
-            if (!idsGuid.All(nid => nid.Ok)) return new List<Product>();
+            var idsValue = ids
+                .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                .Select(s => Guid.TryParse(s, out var g) ? (Guid?)g : null)
+                .Where(g => g.HasValue)
+                .Select(g => g!.Value)
+                .ToArray();
 
-            var idsValue = idsGuid.Select(id => id.Value);
+            if (idsValue.Length == 0)
+                return new List<Product>();
 
             return await _context.Products.AsNoTracking()
-                .Where(p => idsValue.Contains(p.Id) && p.Active).ToListAsync();
+                .Where(p => idsValue.Contains(p.Id) && p.Active)
+                .ToListAsync();
         }
 
         public void Add(Product product)
