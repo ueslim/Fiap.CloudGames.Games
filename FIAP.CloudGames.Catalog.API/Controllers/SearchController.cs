@@ -1,11 +1,11 @@
-﻿using FIAP.CloudGames.Catalog.API.Data;
-using FIAP.CloudGames.Catalog.API.Data.Search;
+﻿using FIAP.CloudGames.Catalog.API.Data.Search;
 using FIAP.CloudGames.WebAPI.Core.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FIAP.CloudGames.Catalog.API.Controllers
 {
+    [AllowAnonymous]
     [Route("catalog/search")]
     public class SearchController : MainController
     {
@@ -23,7 +23,6 @@ namespace FIAP.CloudGames.Catalog.API.Controllers
             var result = await _search.SearchAsync(q ?? "", platform, genre, tagsArr, page, size);
             return Ok(result);
         }
-
 
         [HttpPost("recommendations")]
         public async Task<IActionResult> Recommendations([FromBody] RecommendRequest req)

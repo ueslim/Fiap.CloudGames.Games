@@ -1,8 +1,11 @@
+using Elastic.Clients.Elasticsearch;
+using Elastic.Clients.Elasticsearch.Mapping;
 using FIAP.CloudGames.Catalog.API.Configuration;
 using FIAP.CloudGames.Catalog.API.Data;
 using FIAP.CloudGames.Catalog.API.Data.Search;
 using FIAP.CloudGames.WebAPI.Core.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 LoggingConfig.ConfigureBootstrapLogger();
 
@@ -28,8 +31,7 @@ builder.Services.AddObservabilityConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
-//SEED
-
+// SEED + Index
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<CatalogContext>();
@@ -39,7 +41,12 @@ using (var scope = app.Services.CreateScope())
 
     await CatalogContextSeed.EnsureSeedProducts(context);
 
-    // Indexar tudo no ES na subida (idempotente)
+    // Garantir que o índice existe
+    var es = scope.ServiceProvider.GetRequiredService<ElasticsearchClient>();
+    var esOpts = scope.ServiceProvider.GetRequiredService<IOptions<ElasticsearchConfig.ElasticsearchOptions>>().Value;
+    await EnsureIndexAsync(es, esOpts.IndexName);
+
+    // Indexar tudo no ES na subida
     var search = scope.ServiceProvider.GetRequiredService<IProductSearchService>();
     await search.BulkIndexAllFromDatabase(context);
 }
@@ -52,3 +59,40 @@ app.UseApiConfiguration(app.Environment);
 app.UseRequestLogEnrichment();
 
 app.Run();
+
+static async Task EnsureIndexAsync(ElasticsearchClient client, string index)
+{
+    var exists = await client.Indices.ExistsAsync(index);
+    if (exists.Exists) return;
+
+    var resp = await client.Indices.CreateAsync(index, c => c
+        .Settings(s => s
+            .NumberOfShards(1)
+            .NumberOfReplicas(0)
+        )
+        .Mappings(new TypeMapping
+        {
+            Properties = new Properties
+            {
+                { "id", new KeywordProperty() },
+                { "name", new TextProperty{Fields = new Properties{{ "keyword", new KeywordProperty { IgnoreAbove = 256 } }}}},
+                { "description", new TextProperty() },
+                { "platform", new KeywordProperty() },
+                { "genre", new KeywordProperty() },
+                { "tags", new KeywordProperty() },
+                { "value", new DoubleNumberProperty() },
+                { "metacritic", new IntegerNumberProperty() },
+                { "userRating", new DoubleNumberProperty() },
+                { "releaseDate", new DateProperty() },
+                { "active", new BooleanProperty() },
+                { "popularityScore", new LongNumberProperty() },
+                { "sales", new LongNumberProperty() },
+                { "views", new LongNumberProperty() },
+                { "image", new KeywordProperty() }
+            }
+        })
+    );
+
+    if (!resp.IsValidResponse)
+        throw new InvalidOperationException(resp.ElasticsearchServerError?.Error?.Reason);
+}
