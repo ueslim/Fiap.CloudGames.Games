@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
-using FIAP.CloudGames.Catalog.API.Data;
+﻿using FIAP.CloudGames.Catalog.API.Data;
 using FIAP.CloudGames.Catalog.API.Models;
+using System.Text.Json;
 
 namespace FIAP.CloudGames.Catalog.API.Configuration
 {

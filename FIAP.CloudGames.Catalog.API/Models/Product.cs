@@ -12,16 +12,15 @@ namespace FIAP.CloudGames.Catalog.API.Models
         public string Image { get; set; }
         public int StockQuantity { get; set; }
 
-   
-        public string Genre { get; set; }          
-        public string Platform { get; set; }       
-        public string[] Tags { get; set; } = [];   
-        public decimal? Metacritic { get; set; }   
-        public double? UserRating { get; set; }    
+        public string Genre { get; set; }
+        public string Platform { get; set; }
+        public string[] Tags { get; set; } = [];
+        public decimal? Metacritic { get; set; }
+        public double? UserRating { get; set; }
         public DateTime? ReleaseDate { get; set; }
-        public long PopularityScore { get; set; }  
-        public long Sales { get; set; }            
-        public long Views { get; set; }            
+        public long PopularityScore { get; set; }
+        public long Sales { get; set; }
+        public long Views { get; set; }
 
         public void DecrementStock(int quantity)
         {

@@ -111,7 +111,7 @@ public class ElasticsearchProductSearchService : IProductSearchService
             case SortBy.Recent:
                 sortList.Add(SortOptions.Field(new Field("releaseDate"), new FieldSort { Order = SortOrder.Desc }));
                 sortList.Add(SortOptions.Field(new Field("popularityScore"), new FieldSort { Order = SortOrder.Desc }));
-                sortList.Add(SortOptions.Field(new Field("name.keyword"), new FieldSort { Order = SortOrder.Asc })); 
+                sortList.Add(SortOptions.Field(new Field("name.keyword"), new FieldSort { Order = SortOrder.Asc }));
                 break;
 
             default: // Popularity
@@ -120,7 +120,6 @@ public class ElasticsearchProductSearchService : IProductSearchService
                 sortList.Add(SortOptions.Field(new Field("name.keyword"), new FieldSort { Order = SortOrder.Asc }));
                 break;
         }
-
 
         var req = new SearchRequest<Product>(_index)
         {
@@ -145,7 +144,7 @@ public class ElasticsearchProductSearchService : IProductSearchService
         return new PagedResult<Product>(resp.Documents, page, size, total);
     }
 
-    public async Task<IReadOnlyCollection<Product>> RecommendForUserAsync(string userId, IEnumerable<string> likedGenres, IEnumerable<string> likedTags,string? platform, int size = 20, CancellationToken ct = default)
+    public async Task<IReadOnlyCollection<Product>> RecommendForUserAsync(string userId, IEnumerable<string> likedGenres, IEnumerable<string> likedTags, string? platform, int size = 20, CancellationToken ct = default)
     {
         var should = new List<Query>();
         var filter = new List<Query> { new TermQuery(new Field("active")) { Value = true } };
@@ -277,7 +276,7 @@ public class ElasticsearchProductSearchService : IProductSearchService
         return new PopularMetricsResult(byGenre, byPlatform, top);
     }
 
-    static long ReadTotal<T>(SearchResponse<T> resp)
+    private static long ReadTotal<T>(SearchResponse<T> resp)
     {
         var totalOpt = resp.HitsMetadata?.Total;
 
@@ -287,12 +286,11 @@ public class ElasticsearchProductSearchService : IProductSearchService
         if (totalOpt is { } u)
         {
             return u.Match(
-                (TotalHits th) => th.Value,  
+                (TotalHits th) => th.Value,
                 (long l) => l
             );
         }
 
         return resp.Documents.Count;
     }
-
 }
