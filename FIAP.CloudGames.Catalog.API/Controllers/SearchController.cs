@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FIAP.CloudGames.Catalog.API.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     [Route("catalog/search")]
     public class SearchController : MainController
     {
