@@ -17,7 +17,7 @@ namespace FIAP.CloudGames.Catalog.API.Data
             var config = builder.Build();
 
             var cs = config.GetConnectionString("DefaultConnection")
-                     ?? "Server=(localdb)\\mssqllocaldb;Database=CloudGames_Cart;Trusted_Connection=True;TrustServerCertificate=True";
+                     ?? "Server=(localdb)\\mssqllocaldb;Database=FIAPCloudGames_Catalog;Trusted_Connection=True;TrustServerCertificate=True";
 
             var options = new DbContextOptionsBuilder<CatalogContext>()
                 .UseSqlServer(cs, sql => sql.MigrationsHistoryTable("__EFMigrationsHistory_Catalog", "dbo"))

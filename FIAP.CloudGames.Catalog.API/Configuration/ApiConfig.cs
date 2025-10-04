@@ -9,7 +9,11 @@ namespace FIAP.CloudGames.Catalog.API.Configuration
         public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<CatalogContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(
+                    configuration.GetConnectionString("DefaultConnection"),
+                    sql => sql.MigrationsHistoryTable("__EFMigrationsHistory_Catalog", "dbo")
+                )
+            );
 
             services.AddControllers(options =>
             {

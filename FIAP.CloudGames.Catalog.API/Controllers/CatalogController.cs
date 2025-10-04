@@ -15,7 +15,6 @@ namespace FIAP.CloudGames.Catalog.API.Controllers
             _productRepository = productRepository;
         }
 
-        [AllowAnonymous]
         [HttpGet("catalog/products")]
         public async Task<IEnumerable<Product>> Index()
         {
